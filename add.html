@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <!-- javascript import -->
+    <script src="assets/js/script.js" async></script>
+    <script src="assets/js/ajax.js" async></script>
+
+    <!-- Jquery import -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- bootstrap import  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom styles import -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <!-- nav buttons -->
+    <div class="nav">
+        <h1>Product Add</h1>
+        <div class="buttflex">
+            <button class="SAVE btn btn-primary" id="SAVE"  type="submit" name="sb" onclick="add()">SAVE</button>
+            <button class="CANCEL btn btn-primary"><a href="../junior-developer-test/index.html"> Cancel</a></button>
+        </div>
+    </div>
+
+    <div class='option-div-par'>
+        <div class="option-div">
+            <form " method="POST" id="myform" class="container">
+                <!-- inuts SKU, NAME, PRICE, and Select with options -->
+                <label class="flabel">SKU</label>
+                <input type="text"id='SKU'  class="SKU form-control mx-sm-3" value="" aria-describedby="passwordHelpInline" placeholder="Enter SKU Value" name="SKU" maxlength="9" pattern="[A-Za-z0-9]+">
+                <label class="flabel">Name</label>
+                <input type="text" id='name' class="NAME form-control mx-sm-3" value="" aria-describedby="passwordHelpInline" placeholder="Enter Name" name="NAME" maxlength="15" pattern="[A-Za-z]+">
+                <label class="flabel">Price ($)</label>
+                <input type="text" id='PRICE' class="PRICE form-control mx-sm-3" value="" aria-describedby="passwordHelpInline" placeholder="Enter Price ($)" name="PRICE" maxlength="15" pattern="[0-9]+">
+                <label class="flabel">Product Types</label>
+                <select class="form-control  mx-sm-3" id="options" onchange="Select(value)" name="TYPE">
+                    <option selected aria-placeholder="Switch Type" hidden value="">...</option>
+                    <option value="MB">DVD</option>
+                    <option value="CM">Furniture</option>
+                    <option value="KG">Book</option>
+                </select>
+        </div>
+    </div>
+
+
+    <!-- Additional parameters for each type -->
+    <div class="aditional-parent">
+        <!-- CM type additional params -->
+        <div class="aditional">
+            <div id="submformCM" style="display: none;">
+                <label for="validationServer01" class="parmlabCM">Height (CM)</label>
+                <input type="text" class="form-control parmCM1" id="height" id="validationServer01" value="" placeholder="Set Height(CM)" name="HEIGHT" maxlength="3" pattern="[0-9]+">
+                <label for="validationServer02" class="parmlabCM">Width (CM)</label>
+                <input type="text" class="form-control parmCM2 " id="width" id="validationServer02" value="" placeholder="Set Width (CM)" name="WIDTH" maxlength="3" pattern="[0-9]+">
+                <label for="validationServerUsername" class="parmlabCM">Lenght (CM)</label>
+                <input type="text" class="form-control parmCM3 " id="lenght" id="validationServerUsername" value="" placeholder="Set Lenght (CM)" name="LENGHT" maxlength="3" pattern="[0-9]+">
+                <p>Please <b> Provide</b> Dimensions in <b> HxWxL</b> Format</p>
+            </div>
+
+
+            <!-- additional params for type (MB) -->
+
+            <div id="submformMB" style="display: none;">
+                <label for="validationServerUsername" class="parmlabMB"></label>
+                <input type="text" class="form-control" id="Size" id="Size" placeholder="Set Size (MB)" value="" name="SIZE" maxlength="5" pattern="[0-9]+">
+                <p>Please <b> Provide Size </b> (in MB) for <b>DVD-disc</b></p>
+            </div>
+
+
+
+            <!-- additional params for type KG -->
+
+            <div id="submformKG" style="display: none;">
+                <label for="validationServerUsername" class="parmlabKG"></label>
+                <input type="text" class="form-control " id="Weight" id="inpKG" placeholder="Set Weight (KG)" value="" name="WEIGHT" maxlength="5" pattern="[0-9]+">
+                <p>Please <b>Provide Weight</b>(in Kg) for <b>Book </b></p>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <!-- javascript import -->
+    <script src="assets/js/script.js" async></script>
+    <script src="assets/js/ajax.js"></script>
+    <script src="assets/js/dataFromServ.js" async></script>
+    <!-- Jquery import -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- bootstrap import  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Custom styles import -->
+    <link rel="stylesheet" href="assets/css/style.css" >
+</head>
+
+
+<!-- getData() function loads all the data from tables in mysql -->
+<body onload="getData()">
+
+
+    <!--in this form we geting all the data  -->
+
+    <div class="nav">
+        <h1>Product List</h1>
+        <div class="buttflex">
+            <button class="add btn btn-primary"><a href="../junior-developer-test/add.html">ADD</a></button>
+            <button class="delete btn btn-primary" onclick="processDelete()">MASS DELETE</button>
+        </div>
+    </div>
+
+
+
+    <!-- GET API from mysql db -->
+    <div style="display:flex; flex-wrap:wrap;" multiple='yes' class="form-class">
+        <form method='POST' id='mycheckbox' multiple='yes' style="display:flex; flex-wrap:wrap;">
+        </form>
+    </div>
+    <!-- </div> -->
+</body>
+
+
+</html>
